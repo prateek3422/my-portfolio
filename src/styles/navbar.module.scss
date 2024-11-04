@@ -1,0 +1,154 @@
+.button {
+  position: fixed;
+  right: 0px;
+  margin: 20px;
+  z-index: 2;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #455ce9;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.burger {
+  width: 100%;
+  &::after,
+  &::before {
+    content: "";
+    display: block;
+    height: 1px;
+    width: 40%;
+    margin: auto;
+    background-color: white;
+    position: relative;
+    transition: transform 0.3s;
+  }
+  &::after {
+    top: -5px;
+  }
+
+  &::before {
+    top: 5px;
+  }
+}
+
+.burgerActive {
+  &::after {
+    transform: rotate(45deg);
+
+    top: -1px;
+  }
+
+  &::before {
+    transform: rotate(-45deg);
+
+    top: 0px;
+  }
+}
+
+//nav tabs
+
+.menu {
+  height: 100vh;
+  background-color: rgb(41, 41, 41);
+  position: fixed;
+  right: 0;
+  left: 0;
+  top: 0;
+  color: white;
+  .body {
+    box-sizing: border-box;
+
+    height: 100%;
+
+    padding: 2.5rem;
+
+    display: flex;
+
+    flex-direction: column;
+
+    // justify-content: space-evenly;
+    gap: 4rem;
+    margin-top: 2rem;
+    .nav {
+      display: flex;
+      flex-direction: column;
+      font-size: 3.5rem;
+      gap: 0.5rem;
+
+      // margin-top: 2rem;
+
+      .header {
+        color: rgb(153, 153, 153);
+
+        border-bottom: 1px solid rgb(153, 153, 153);
+
+        text-transform: uppercase;
+
+        font-size: 11px;
+
+        margin-bottom: 0.8rem;
+      }
+
+      a {
+        text-decoration: none;
+
+        color: white;
+
+        font-weight: 300;
+      }
+    }
+  }
+  .footer {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    font-size: 12px;
+    gap: 10px;
+  }
+}
+
+//link
+
+.link {
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .indicator {
+    width: 10px;
+
+    height: 10px;
+
+    background-color: white;
+
+    border-radius: 50%;
+
+    position: absolute;
+
+    left: -30px;
+  }
+}
+
+//svg
+
+.svgCurve {
+  position: absolute;
+
+  top: 0;
+
+  left: -99px;
+
+  width: 100px;
+
+  height: 100%;
+
+  fill: rgb(41, 41, 41);
+
+  stroke: none;
+}

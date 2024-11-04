@@ -20,6 +20,7 @@ const config: Config = {
         meteor: "meteor 5s linear infinite",
         spotlight: "spotlight 2s ease .75s 1 forwards",
       },
+
       keyframes: {
         meteor: {
           "0%": { transform: "rotate(215deg) translateX(0)", opacity: "1" },
