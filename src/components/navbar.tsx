@@ -1,5 +1,5 @@
 "use client";
-import { useRef, useState } from "react";
+import { use, useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Avatar, Button } from "@nextui-org/react";
 import style from "@/styles/navbar.module.scss";
@@ -150,6 +150,9 @@ export const MobileTabs = () => {
   const pathname = usePathname();
   const [selectIndicator, setSelectIndicator] = useState(pathname);
 
+  useEffect(() => {
+    setSelectIndicator(pathname);
+  }, [pathname]);
   return (
     <>
       <motion.div
