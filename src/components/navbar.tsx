@@ -13,7 +13,11 @@ export const TAB = ({
   setPosition,
 }: {
   children: React.ReactNode;
-  setPosition: any;
+  setPosition: (position: {
+    width: number;
+    left: number;
+    opacity: number;
+  }) => void;
 }) => {
   const ref = useRef<HTMLLIElement>(null);
   return (
@@ -36,7 +40,11 @@ export const TAB = ({
     </li>
   );
 };
-export const Cursor = ({ position }: any) => {
+export const Cursor = ({
+  position,
+}: {
+  position: { width: number; left: number; opacity: number };
+}) => {
   return (
     <motion.li
       animate={position}
@@ -69,7 +77,7 @@ export const SLideTabs = () => {
     },
   ];
   const [position, setPosition] = useState({
-    with: 0,
+    width: 0,
     left: 0,
     opacity: 0,
   });
@@ -137,8 +145,13 @@ export const Curvenav = () => {
   );
 };
 
-export const Links = ({ data, Active, setSelectIndicator }: LinkType) => {
-  const { name, link, index } = data;
+export const Links = ({
+  data,
+  index,
+  Active,
+  setSelectIndicator,
+}: LinkType) => {
+  const { name, link } = data;
   return (
     <motion.div
       className={style.link}
@@ -206,18 +219,27 @@ export const MobileTabs = () => {
               <p>Navigation</p>
             </div>
 
-            {navItems.map((data, index) => {
-              return (
-                <>
-                  <Links
-                    key={index}
-                    data={data}
-                    Active={selectIndicator === data.link}
-                    setSelectIndicator={setSelectIndicator}
-                  ></Links>
-                </>
-              );
-            })}
+            {navItems.map(
+              (
+                data: {
+                  name: string;
+                  link: string;
+                },
+                index
+              ) => {
+                return (
+                  <>
+                    <Links
+                      key={index}
+                      data={data}
+                      Active={selectIndicator === data.link}
+                      setSelectIndicator={setSelectIndicator}
+                      index={0}
+                    ></Links>
+                  </>
+                );
+              }
+            )}
           </div>
           <div className={style.footer}>
             <a>Awwwards</a>

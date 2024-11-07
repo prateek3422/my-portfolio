@@ -19,7 +19,7 @@ export const HoverEffect = ({
     links: {
       type: string;
       href: string;
-      icon: any;
+      icon: React.ReactNode;
     }[];
   }[];
   className?: string;

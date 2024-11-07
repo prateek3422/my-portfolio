@@ -1,5 +1,11 @@
 export interface LinkType {
-  data: any;
+  data: {
+    name: string;
+    link: string;
+  };
+  index: number;
   Active: boolean;
-  setSelectIndicator: any;
+  setSelectIndicator: {
+    (value: string): void;
+  };
 }

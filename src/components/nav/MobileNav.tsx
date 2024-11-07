@@ -49,8 +49,13 @@ export const Curvenav = () => {
   );
 };
 
-export const Links = ({ data, Active, setSelectIndicator }: LinkType) => {
-  const { name, link, index } = data;
+export const Links = ({
+  data,
+  index,
+  Active,
+  setSelectIndicator,
+}: LinkType) => {
+  const { name, link } = data;
   return (
     <motion.div
       className={style.link}
@@ -119,6 +124,7 @@ export const MobileTabs = () => {
                     data={data}
                     Active={selectIndicator === data.link}
                     setSelectIndicator={setSelectIndicator}
+                    index={0}
                   ></Links>
                 </>
               );
