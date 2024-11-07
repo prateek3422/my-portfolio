@@ -1,14 +1,13 @@
 "use client";
-import { Navbar } from "@/components/navbar";
+
 import { motion } from "framer-motion";
 import Project from "@/components/project";
 import Service from "@/components/service";
 import { AnimatedBackground } from "@/components/ui/animated-background";
-import { ServiceHoverEffect } from "@/components/ui/service-hover-effect";
 import { Spotlight } from "@/components/ui/spotlight";
 import { DATA } from "@/Data/detail";
 import { Button, Divider } from "@nextui-org/react";
-import { Code2, Copyright, Github, Mail } from "lucide-react";
+import { Copyright, Github, Mail } from "lucide-react";
 
 export default function Home() {
   return (
@@ -31,6 +30,7 @@ export default function Home() {
             <Button className="bg-[#8f61c8] text-neutral-100">
               Contact <Mail />
             </Button>
+
             <Button className="bg-[#8f61c8] text-neutral-100">
               Git hub <Github />
             </Button>
@@ -39,32 +39,40 @@ export default function Home() {
 
         {/* skill section */}
 
-        <div className="mt-20" id="skill">
+        <div className="mt-20" id="skills">
           <h1 className="text-center text-3xl font-bold  text-neutral-200">
             {" "}
             Technical Skills
           </h1>
 
           <div className="grid grid-cols-2 md:grid-cols-6  gap-8 mt-8">
-            {DATA.skill?.map((data: any, index) => {
-              return (
-                <div
-                  key={index}
-                  className="bg-neutral-900/50 flex items-center justify-center flex-col backdrop-blur-sm rounded-xl aspect-square   text-center border border-neutral-800 "
-                >
-                  {data.icon}
-                  <h1 className="text-neutral-200 capitalize font-bold text-lg">
-                    {data.name}
-                  </h1>
-                </div>
-              );
-            })}
+            {DATA.skill?.map(
+              (
+                data: {
+                  icon: React.ReactNode;
+                  name: string;
+                },
+                index
+              ) => {
+                return (
+                  <div
+                    key={index}
+                    className="bg-neutral-900/50 flex items-center justify-center flex-col backdrop-blur-sm rounded-xl aspect-square   text-center border border-neutral-800 "
+                  >
+                    {data.icon}
+                    <h1 className="text-neutral-200 capitalize font-bold text-lg">
+                      {data.name}
+                    </h1>
+                  </div>
+                );
+              }
+            )}
           </div>
         </div>
 
         {/* // project section */}
 
-        <div className="mt-8 mx-auto max-w-6xl">
+        <div className="mt-8 mx-auto max-w-6xl" id="projects">
           <h1 className="text-center text-3xl font-bold  text-neutral-200">
             Projects
           </h1>
@@ -73,12 +81,12 @@ export default function Home() {
 
         {/* // service section */}
 
-        {/* <div className="mt-8 max-w-6xl mx-auto">
+        <div className="mt-8 max-w-6xl mx-auto" id="services">
           <h1 className="text-center text-3xl font-bold  text-neutral-200">
             Services
           </h1>
           <Service />
-        </div> */}
+        </div>
 
         {/* footer section */}
         <div className="mb-4">

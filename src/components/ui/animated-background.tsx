@@ -3,9 +3,6 @@
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 
-interface MeteorsProps {
-  number?: number;
-}
 export const AnimatedBackground = () => {
   const [meteorStyles, setMeteorStyles] = useState<Array<React.CSSProperties>>(
     []

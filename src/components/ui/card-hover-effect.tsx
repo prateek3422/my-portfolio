@@ -24,7 +24,7 @@ export const HoverEffect = ({
   }[];
   className?: string;
 }) => {
-  let [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
     <div
@@ -105,7 +105,7 @@ export const Card = ({
   return (
     <div
       className={cn(
-        "rounded-2xl h-full w-full  overflow-hidden bg-black border border-transparent dark:border-white/[0.2] group-hover:border-slate-700 relative z-20",
+        "rounded-2xl h-full w-full  overflow-hidden bg-neutral-950/50 border border-transparent dark:border-white/[0.2] group-hover:border-slate-700 relative z-20",
         className
       )}
     >
@@ -179,7 +179,7 @@ const CardLinks = ({
         size="sm"
         className={cn(`flex items-center justify-center gap-2 bg-[#8f61c8]`)}
       >
-        {/* <h1 className="text-neutral-200 ">{icons}</h1> */}
+        <h1 className="text-neutral-200 ">{icons}</h1>
         <h1 className="text-neutral-200">{type}</h1>
       </Button>
     </Link>

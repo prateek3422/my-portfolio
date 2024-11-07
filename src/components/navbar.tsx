@@ -1,5 +1,5 @@
 "use client";
-import { use, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Avatar, Button } from "@nextui-org/react";
 import style from "@/styles/navbar.module.scss";
@@ -8,7 +8,13 @@ import { menuslide, Scale, slide } from "@/lib/anime";
 import { LinkType } from "@/types/navbarTypes";
 import Link from "next/link";
 
-export const TAB = ({ children, setPosition }: any) => {
+export const TAB = ({
+  children,
+  setPosition,
+}: {
+  children: React.ReactNode;
+  setPosition: any;
+}) => {
   const ref = useRef<HTMLLIElement>(null);
   return (
     <li
@@ -40,6 +46,28 @@ export const Cursor = ({ position }: any) => {
 };
 
 export const SLideTabs = () => {
+  const navItems = [
+    {
+      name: "Home",
+      link: "home",
+    },
+    {
+      name: "About",
+      link: "about",
+    },
+    {
+      name: "skill",
+      link: "skills",
+    },
+    {
+      name: "Projects",
+      link: "projects",
+    },
+    {
+      name: "Services",
+      link: "services",
+    },
+  ];
   const [position, setPosition] = useState({
     with: 0,
     left: 0,
@@ -55,10 +83,13 @@ export const SLideTabs = () => {
       }
       className="relative  flex w-fit rounded-full bg-transparent p-1"
     >
-      <TAB setPosition={setPosition}>Home</TAB>
-      <TAB setPosition={setPosition}>About</TAB>
-      <TAB setPosition={setPosition}>PROJECTS</TAB>
-      <TAB setPosition={setPosition}>CONTACT</TAB>
+      {navItems.map((data, index) => {
+        return (
+          <TAB key={index} setPosition={setPosition}>
+            <Link href={`#${data.link.toLowerCase()}`}>{data.name}</Link>
+          </TAB>
+        );
+      })}
 
       <Cursor position={position} />
     </ul>
@@ -132,19 +163,23 @@ export const MobileTabs = () => {
   const navItems = [
     {
       name: "Home",
-      link: "#home",
+      link: "home",
     },
     {
       name: "About",
-      link: "#about",
+      link: "about",
+    },
+    {
+      name: "skill",
+      link: "skills",
     },
     {
       name: "Projects",
-      link: "#projects",
+      link: "projects",
     },
     {
       name: "Contact",
-      link: "#contact",
+      link: "contact",
     },
   ];
   const pathname = usePathname();

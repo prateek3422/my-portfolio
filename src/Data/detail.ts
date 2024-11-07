@@ -1,9 +1,9 @@
 // import { Globe } from "@/components/icon";
 import { ICONS } from "@/components/icon";
-import { s } from "framer-motion/client";
-import { GlobeIcon, MailIcon } from "lucide-react";
+
 export const DATA = {
   name: "Prateek Singh",
+  Mail: "",
   skill: [
     { name: "html", icon: ICONS.Html },
     { name: "css", icon: ICONS.Css },
@@ -47,7 +47,7 @@ export const DATA = {
           icon: ICONS.globe,
         },
         {
-          type: "Website",
+          type: "Github",
           href: "https://chatcollect.com",
           icon: ICONS.Github,
         },
@@ -76,7 +76,7 @@ export const DATA = {
           icon: ICONS.globe,
         },
         {
-          type: "Website",
+          type: "Github",
           href: "https://chatcollect.com",
           icon: ICONS.Github,
         },
@@ -96,7 +96,7 @@ export const DATA = {
           icon: ICONS.globe,
         },
         {
-          type: "Website",
+          type: "Github",
           href: "https://chatcollect.com",
           icon: ICONS.Github,
         },
@@ -124,7 +124,7 @@ export const DATA = {
           icon: ICONS.globe,
         },
         {
-          type: "Website",
+          type: "Github",
           href: "https://github.com/prateek3422/animated-landing-page",
           icon: ICONS.Github,
         },
@@ -144,13 +144,33 @@ export const DATA = {
           icon: ICONS.globe,
         },
         {
-          type: "Website",
+          type: "Github",
           href: "https://github.com/prateek3422/animated-landing-page",
           icon: ICONS.Github,
         },
       ],
       image:
         "https://images.unsplash.com/photo-1540350394557-8d14678e7f91?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    },
+  ],
+
+  services: [
+    {
+      title: "Frontend Development",
+      description:
+        "I can help you build a modern and responsive website that works on all devices.",
+      icon: ICONS.Frontend,
+    },
+    {
+      title: "Backend Development",
+      description:
+        "I can help you build a scalable and secure backend for your application.",
+      icon: ICONS.Backend,
+    },
+    {
+      title: "deployment",
+      description: "I can help you deploy your application on the cloud.",
+      icon: ICONS.Deployment,
     },
   ],
 };
