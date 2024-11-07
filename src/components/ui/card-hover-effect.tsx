@@ -21,8 +21,6 @@ export const HoverEffect = ({
       href: string;
       icon: any;
     }[];
-    active: boolean;
-    dates: string;
   }[];
   className?: string;
 }) => {
@@ -173,7 +171,7 @@ const CardLinks = ({
 }: {
   type: string;
   href: string;
-  icons: string;
+  icons: React.ReactNode;
 }) => {
   return (
     <Link href={href}>
@@ -181,7 +179,7 @@ const CardLinks = ({
         size="sm"
         className={cn(`flex items-center justify-center gap-2 bg-[#8f61c8]`)}
       >
-        <h1 className="text-neutral-200 "> {icons} </h1>
+        {/* <h1 className="text-neutral-200 ">{icons}</h1> */}
         <h1 className="text-neutral-200">{type}</h1>
       </Button>
     </Link>

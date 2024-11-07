@@ -1,11 +1,14 @@
 "use client";
 import { Navbar } from "@/components/navbar";
+import { motion } from "framer-motion";
 import Project from "@/components/project";
+import Service from "@/components/service";
 import { AnimatedBackground } from "@/components/ui/animated-background";
+import { ServiceHoverEffect } from "@/components/ui/service-hover-effect";
 import { Spotlight } from "@/components/ui/spotlight";
 import { DATA } from "@/Data/detail";
-import { Button } from "@nextui-org/react";
-import { Code2, Github, Mail } from "lucide-react";
+import { Button, Divider } from "@nextui-org/react";
+import { Code2, Copyright, Github, Mail } from "lucide-react";
 
 export default function Home() {
   return (
@@ -15,7 +18,7 @@ export default function Home() {
 
       {/* hero sections */}
 
-      <div className="relative  max-w-7xl mx-auto space-y-20 px-6 pt-32 md:pt-44">
+      <div className="relative  max-w-6xl mx-auto  px-6 pt-32 md:pt-44">
         <div className="text-center space-y-6">
           <h1 className=" text-4xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-neutral-100 to-neutral-400">
             Full-Stack Developer
@@ -36,22 +39,22 @@ export default function Home() {
 
         {/* skill section */}
 
-        <div className="mt-8" id="skill">
+        <div className="mt-20" id="skill">
           <h1 className="text-center text-3xl font-bold  text-neutral-200">
             {" "}
             Technical Skills
           </h1>
 
           <div className="grid grid-cols-2 md:grid-cols-6  gap-8 mt-8">
-            {DATA.skill?.map((data, index) => {
+            {DATA.skill?.map((data: any, index) => {
               return (
                 <div
                   key={index}
                   className="bg-neutral-900/50 flex items-center justify-center flex-col backdrop-blur-sm rounded-xl aspect-square   text-center border border-neutral-800 "
                 >
-                  <Code2 className="h-6 w-6  mx-auto mb-2 items-center text-neutral-200" />
+                  {data.icon}
                   <h1 className="text-neutral-200 capitalize font-bold text-lg">
-                    {data}
+                    {data.name}
                   </h1>
                 </div>
               );
@@ -61,12 +64,63 @@ export default function Home() {
 
         {/* // project section */}
 
-        <div className="mt-8">
+        <div className="mt-8 mx-auto max-w-6xl">
           <h1 className="text-center text-3xl font-bold  text-neutral-200">
-            {" "}
             Projects
           </h1>
           <Project />
+        </div>
+
+        {/* // service section */}
+
+        {/* <div className="mt-8 max-w-6xl mx-auto">
+          <h1 className="text-center text-3xl font-bold  text-neutral-200">
+            Services
+          </h1>
+          <Service />
+        </div> */}
+
+        {/* footer section */}
+        <div className="mb-4">
+          <Divider className=" bg-neutral-400 " />
+
+          <div className="flex items-center justify-between">
+            <p className="text-center text-neutral-200 flex items-center justify-start gap-2 py-4">
+              <Copyright />
+              2024 Prateek Singh
+            </p>
+            <motion.h1
+              className=" rounded-lg text-neutral-200  px-4 py-2 font-bold text-lg cursor-pointer"
+              whileHover={{ scale: 1.05 }}
+              transition={{ type: "spring", stiffness: 300 }}
+            >
+              ps0431299@gmail.com
+            </motion.h1>
+
+            <div className="flex items-center justify-center gap-2">
+              <motion.div
+                className=" rounded-lg  "
+                whileHover={{ scale: 1.05 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                <img src="/x.png" alt="" className=" w-8" />
+              </motion.div>
+              <motion.div
+                className=" rounded-lg  "
+                whileHover={{ scale: 1.05 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                <img src="/in.png" alt="" className="w-10" />
+              </motion.div>
+              <motion.div
+                className=" rounded-lg  "
+                whileHover={{ scale: 1.05 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                <img src="/dd.png" alt="" className="w-10" />
+              </motion.div>
+            </div>
+          </div>
         </div>
       </div>
     </main>
