@@ -8,6 +8,7 @@ import { Spotlight } from "@/components/ui/spotlight";
 import { DATA } from "@/Data/detail";
 import { Button, Divider } from "@nextui-org/react";
 import { Copyright, Github, Mail } from "lucide-react";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -27,13 +28,17 @@ export default function Home() {
             Specialized in React, Node.js, and cloud architecture.
           </p>
           <div className="flex justify-center gap-8 items-center">
-            <Button className="bg-[#8f61c8] text-neutral-100">
-              Contact <Mail />
-            </Button>
+            <Link href="mailto:ps0431299@gmail.com" target="_blank">
+              <Button className="bg-[#8f61c8] text-neutral-100">
+                Contact <Mail />
+              </Button>
+            </Link>
 
-            <Button className="bg-[#8f61c8] text-neutral-100">
-              Git hub <Github />
-            </Button>
+            <Link href="https://github.com/prateek3422" target="_blank">
+              <Button className="bg-[#8f61c8] text-neutral-100">
+                Git hub <Github />
+              </Button>
+            </Link>
           </div>
         </div>
 
