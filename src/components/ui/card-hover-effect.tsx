@@ -174,7 +174,7 @@ const CardLinks = ({
   icons: React.ReactNode;
 }) => {
   return (
-    <Link href={href}>
+    <Link href={href} target="_blank">
       <Button
         size="sm"
         className={cn(`flex items-center justify-center gap-2 bg-[#8f61c8]`)}
