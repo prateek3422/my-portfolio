@@ -9,38 +9,55 @@ import { DATA } from "@/Data/detail";
 import { Button, Divider } from "@nextui-org/react";
 import { Copyright, Github, Mail } from "lucide-react";
 import Link from "next/link";
+import Signatures from "@/components/signature";
 
 export default function Home() {
+
+  const cardVariants = {
+    offscreen: { opacity: 0, y: 100 },
+    onscreen: { opacity: 1, y: 0 },
+  
+  }
   return (
     <main className="relative min-h-screen w-full bg-black antialiased overflow-hidden">
       <AnimatedBackground />
       <Spotlight className="-top-40 left-0" />
+      <div className="mt-16">
+
+      </div>
 
       {/* hero sections */}
 
       <div className="relative  max-w-6xl mx-auto  px-6 pt-32 md:pt-44">
-        <div className="text-center space-y-6">
-          <h1 className=" text-4xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-neutral-100 to-neutral-400">
-            Full-Stack Developer
-          </h1>
-          <p className="text-neutral-400 max-w-2xl mx-auto text-lg  md:text-xl">
-            Crafting digital experiences with modern web technologies.
-            Specialized in React, Node.js, and cloud architecture.
-          </p>
-          <div className="flex justify-center gap-8 items-center">
-            <Link href="mailto:ps0431299@gmail.com" target="_blank">
-              <Button className="bg-[#8f61c8] text-neutral-100">
-                Contact <Mail />
-              </Button>
-            </Link>
+        <motion.div
+          initial="offscreen"
+          whileInView="onscreen"
+          className="space-y-8"
+          viewport={{ amount: 0.8 }}
+        >
+          <div className="text-center space-y-6">
+            <h1 className=" text-4xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-neutral-100 to-neutral-400">
+              Full-Stack Developer
+            </h1>
+            <p className="text-neutral-400 max-w-2xl mx-auto text-lg  md:text-xl">
+              Crafting digital experiences with modern web technologies.
+              Specialized in React, Node.js, and cloud architecture.
+            </p>
+            <div className="flex justify-center gap-8 items-center">
+              <Link href="mailto:ps0431299@gmail.com" target="_blank">
+                <Button className="bg-[#8f61c8] text-neutral-100">
+                  Contact <Mail />
+                </Button>
+              </Link>
 
-            <Link href="https://github.com/prateek3422" target="_blank">
-              <Button className="bg-[#8f61c8] text-neutral-100">
-                Git hub <Github />
-              </Button>
-            </Link>
+              <Link href="https://github.com/prateek3422" target="_blank">
+                <Button className="bg-[#8f61c8] text-neutral-100">
+                  Git hub <Github />
+                </Button>
+              </Link>
+            </div>
           </div>
-        </div>
+        </motion.div>
 
         {/* skill section */}
 

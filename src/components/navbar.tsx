@@ -7,6 +7,7 @@ import { usePathname } from "next/navigation";
 import { menuslide, Scale, slide } from "@/lib/anime";
 import { LinkType } from "@/types/navbarTypes";
 import Link from "next/link";
+import Signatures from "./signature";
 
 export const TAB = ({
   children,
@@ -276,16 +277,7 @@ export const Navbar = () => {
   return (
     <>
       <nav className="absolute top-0 left-0 right-0 z-50  items-center justify-around px-5 py-3 hidden sm:flex">
-        <div className="flex justify-center items-center gap-4">
-          <Avatar
-            src="/logo1.jpg"
-            alt="Avatar"
-            className="text-large h-16 w-16"
-          />
-          <h1 className="text-lg  font-bold uppercase text-slate-200 hidden lg:block">
-            prateek singh
-          </h1>
-        </div>
+        <Signatures />
         <SLideTabs />
         <Button
           variant="solid"
