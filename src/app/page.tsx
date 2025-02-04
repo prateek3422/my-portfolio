@@ -9,22 +9,18 @@ import { DATA } from "@/Data/detail";
 import { Button, Divider } from "@nextui-org/react";
 import { Copyright, Github, Mail } from "lucide-react";
 import Link from "next/link";
-import Signatures from "@/components/signature";
 
 export default function Home() {
+  // const cardVariants = {
+  //   offscreen: { opacity: 0, y: 100 },
+  //   onscreen: { opacity: 1, y: 0 },
 
-  const cardVariants = {
-    offscreen: { opacity: 0, y: 100 },
-    onscreen: { opacity: 1, y: 0 },
-  
-  }
+  // }
   return (
     <main className="relative min-h-screen w-full bg-black antialiased overflow-hidden">
       <AnimatedBackground />
       <Spotlight className="-top-40 left-0" />
-      <div className="mt-16">
-
-      </div>
+      <div className="mt-16"></div>
 
       {/* hero sections */}
 

@@ -1,6 +1,6 @@
 "use client";
 import { motion, useInView, Variants } from "framer-motion";
-import { div } from "framer-motion/client";
+// import { div } from "framer-motion/client";
 
 import { useRef } from "react";
 
@@ -80,7 +80,7 @@ const Prateek = () => {
   const ref = useRef(null);
   const isVisible = useInView(ref);
   return (
-    <div ref={ref} >
+    <div ref={ref}>
       <motion.svg
         initial="initial"
         animate={isVisible ? "revealed" : "initial"}

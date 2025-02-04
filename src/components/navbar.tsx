@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { Avatar, Button } from "@nextui-org/react";
+import { Button } from "@nextui-org/react";
 import style from "@/styles/navbar.module.scss";
 import { usePathname } from "next/navigation";
 import { menuslide, Scale, slide } from "@/lib/anime";
